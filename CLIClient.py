@@ -267,9 +267,22 @@ class CLIClient:
                 break
         user,pwd = res
 
-        encrypted = utils.password_encrypt(k,pwd,5)
+        encrypted = utils.password_encrypt(k,pwd)
 
-        with open(res[0]+".txt",'a') as f:
+        with open(res[0]+".txt",'a+') as f:
+            f.write(session+","+encrypted.decode()+","+str(data)+"\n")
+        return True
+    def save_key(self,k,session,data):
+        while True:
+            print("Login to store session key")
+            res = self.login(check=True)
+            if res != False:
+                break
+        user,pwd = res
+
+        encrypted = utils.password_encrypt(k,pwd)
+
+        with open(res[0]+".txt",'a+') as f:
             f.write(session+","+encrypted.decode()+","+str(data)+"\n")
         return True
 
