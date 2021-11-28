@@ -104,8 +104,8 @@ class CLIClient:
                 'password': pwd}
 
         resp = requests.post(url,data=body)
-        if resp.status_code != 200:
-            print("Registration Failed: ",resp.json())
+        if resp.status_code != 201:
+            print("Registration Failed",resp.json())
             return False
         else:
             return self.login(user,pwd)

@@ -10,6 +10,9 @@ class UserSerializer(serializers.ModelSerializer):
 
 class CreateUserSerializer(serializers.Serializer):
 
+    username = serializers.CharField(min_length=5,max_length=200)
+    password = serializers.CharField()
+    email = serializers.EmailField()
     class Meta:
         model = get_user_model()
         fields = ['username', 'email','password']

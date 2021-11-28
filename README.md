@@ -84,7 +84,13 @@ This server can then communicate with the PSI endpoint of another business, allo
 without actually revealing their contents.
 
 The CLI client allows us to interface with the data easily, since the way the server communicates with the CLI
-is very similar with that of another server
+is very similar with that of another server. Whenever joining a session, the client creates a key associated with the client and
+stores it in a file {username}.txt, encrypted with the password. Anyone wanting to view the intersection need
+to obtain this session key( which can only be decrypted by the password).
+
+The key storage method is also easily modifiable as it works independently of other parts of the applications
+(canbe customized for different encryption schemes or third parth auth) but in this client we use the Fernet 
+symmetric encryption scheme from the cryptography module.
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Protocol
