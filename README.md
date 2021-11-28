@@ -97,8 +97,7 @@ symmetric encryption scheme from the cryptography module.
 For the purpose of this explanation, we'll use the Client to Server communication scheme
 
 #### Setup Phase
-
-<img alt="Client to server setup" height="1000" src="./images/ccSetup.png?raw=true" width="1000"/>
+![Client to server setup](./images/ccSetup.png)
 
 1.Provider sends server with data S
 2.Server sends provider sessionID
