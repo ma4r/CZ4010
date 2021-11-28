@@ -97,7 +97,7 @@ symmetric encryption scheme from the cryptography module.
 For the purpose of this explanation, we'll use the Client to Server communication scheme
 
 #### Setup Phase
-![Client to server setup](./images/ccSetup.png)
+<img src="https://github.com/ma4r/CZ4010/tree/master/images/ccSetup.png" alt="drawing" width="400" height="500"/>
 
 1.Provider sends server with data S
 2.Server sends provider sessionID
